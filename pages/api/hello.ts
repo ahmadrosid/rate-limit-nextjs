@@ -16,8 +16,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log({ratelimit});
-  
   if (ratelimit) {
     const identifier = requestIp.getClientIp(req);
     const result = await ratelimit.limit(identifier!);

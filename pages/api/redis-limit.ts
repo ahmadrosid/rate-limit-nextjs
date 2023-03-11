@@ -30,7 +30,9 @@ export default async function handler(
   if (!result.success) {
     res
       .status(429)
-      .json("Too many uploads in 1 minute. Please try again in a few minutes.");
+      .json(
+        "Too many requests in 1 minute. Please try again in a few minutes."
+      );
     return;
   }
 
